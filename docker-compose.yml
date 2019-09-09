@@ -1,0 +1,13 @@
+---
+version: '3'
+
+services:
+  ffmpeg:
+    build: .
+    container_name: ffmpeg
+    env_file:
+      - ./work.env
+    volumes:
+      - ./files:/tmp/files
+      - ./scripts:/tmp/scripts
+    # entrypoint: ${ENTRYPOINT:-/tmp/scripts/exau.sh}
